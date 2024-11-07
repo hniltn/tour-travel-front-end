@@ -30,6 +30,14 @@ const bookingService = {
         const updatedRequest = { ...currentRequest.data, isReplied };
         const response = await axios.put(`${API_URL_ADVISING}/${id}`, updatedRequest);
         return response.data;
+    },
+    async getAdvisingRequestById (requestsId) {
+        try {
+            const requests = await axios.get(`${API_URL_ADVISING}/${requestsId}`);
+            return requests.data;
+          } catch (error) {
+            throw new Error(error);
+          }
     }
 }
 export default bookingService;
