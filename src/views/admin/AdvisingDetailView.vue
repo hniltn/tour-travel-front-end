@@ -50,7 +50,7 @@
                 <div class="response-container">
                     <advising-response-component v-for="(response, index) in responses" :key="index"
                         :response="response" :index="index" @update-response="updateResponse" />
-                    <button v-if="filteredResponses.length && responses.length < 3" @click="addResponse"
+                    <button v-if="filteredResponses.length + responses.length < 3" @click="addResponse"
                         class="add-response-button">
                         <font-awesome-icon icon="fa-solid fa-plus" class="icon" />
                         Thêm ngày liên hệ
