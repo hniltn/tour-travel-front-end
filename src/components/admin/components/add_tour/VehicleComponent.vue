@@ -1,9 +1,9 @@
 <template>
     <form @submit.prevent="handleSubmit">
-        <div v-for="(vehicle, index) in selectedVehicles" :key="vehicle.id" class="form-group">
-            <label :for="'vehicle-' + vehicle.id">Chọn phương tiện di chuyển</label>
+        <div v-for="(vehicle, index) in selectedVehicles" :key="index" class="form-group">
+            <label :for="'vehicle-' + index">Chọn phương tiện di chuyển</label>
             <select v-model="selectedVehicles[index]" required>
-                <option v-for="option in vehicles" :key="option.id" :value="option.vehicleName">{{ option.vehicleName }}
+                <option v-for="option in vehicles" :key="option.id" :value="option.id">{{ option.nameVehicle }}
                 </option>
             </select>
             <button v-if="selectedVehicles.length > 1" type="button" @click="removeVehicleSelect(index)"
@@ -19,36 +19,49 @@
         <button type="submit">Tiếp theo</button>
     </form>
 </template>
+
 <script>
+import { mapState } from 'vuex';
+
 export default {
     props: ['vehicleTour'], 
+    computed: {
+        ...mapState('tours', ['tourData'])
+    },
     data() {
         return {
             vehicles: [
-                { id: 1, vehicleName: 'Ô tô' },
-                { id: 2, vehicleName: 'Máy bay' },
-                { id: 3, vehicleName: 'Tàu hỏa' },
-                { id: 4, vehicleName: 'Xe Limousine' },
-                { id: 5, vehicleName: 'Xe lửa' },
-                { id: 6, vehicleName: 'Ca nô' },
-                { id: 7, vehicleName: 'Xuồng chèo' },
-                { id: 8, vehicleName: 'Du thuyền' }
+                { id: 1, nameVehicle: 'Ô tô' },
+                { id: 2, nameVehicle: 'Máy bay' },
+                { id: 3, nameVehicle: 'Tàu hỏa' },
+                { id: 4, nameVehicle: 'Xe Limousine' },
+                { id: 5, nameVehicle: 'Xe lửa' },
+                { id: 6, nameVehicle: 'Ca nô' },
+                { id: 7, nameVehicle: 'Xuồng chèo' },
+                { id: 8, nameVehicle: 'Du thuyền' }
             ],
-            selectedVehicles: [''],
+            selectedVehicles: this.tourData?.vehicle?.map(vehicle => vehicle.id) || [null], // Khởi tạo với giá trị null
         }
     },
     methods: {
         addVehicleSelect() {
-            this.selectedVehicles.push('');
-        },
-        addVehicle() {
-            this.selectedVehicles.push('');
+            this.selectedVehicles.push(null); // Thêm một phương tiện mới
         },
         removeVehicleSelect(index) {
-            this.selectedVehicles.splice(index, 1);
+            this.selectedVehicles.splice(index, 1); // Xóa phương tiện đã chọn
         },
         handleSubmit() {
-            this.$store.commit('tours/setVehicle', this.selectedVehicles);
+            const vehiclesToSave = this.selectedVehicles.map(id => {
+                return this.vehicles.find(vehicle => vehicle.id === id);
+            }).filter(vehicle => vehicle); // Lọc ra các phương tiện hợp lệ
+
+            // Chuyển đổi định dạng để phù hợp với yêu cầu
+            const formattedVehicles = vehiclesToSave.map(vehicle => ({
+                id: vehicle.id,
+                nameVehicle: vehicle.nameVehicle
+            }));
+
+            this.$store.commit('tours/setVehicle', formattedVehicles); // Lưu vào Vuex
             this.$emit('next');
         }
     }

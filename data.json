@@ -4657,6 +4657,91 @@
           ]
         }
       ]
+    },
+    {
+      "id": "510916",
+      "name": "Tour Miền Tây Trong Ngày: HCM - Mỹ Tho - Bến Tre",
+      "image": "https://cdn2.ivivu.com/2022/02/15/09/ivivu-chua-vinh-trang-2-750x390.gif",
+      "categoryId": "1",
+      "areaId": "3",
+      "price_adult": 450000,
+      "quantity_date": "Trong ngày",
+      "start_location": "Hồ Chí Minh",
+      "end_location": "Bến Tre",
+      "star": "Chưa có đánh giá",
+      "start_date": "11/7/2024",
+      "vehicle": [
+        {
+          "id": 1,
+          "nameVehicle": "Ô tô"
+        }
+      ],
+      "tour_services": [
+        {
+          "id": 4,
+          "nameService": "Bữa ăn"
+        },
+        {
+          "id": 3,
+          "nameService": "Hướng dẫn viên"
+        },
+        {
+          "id": 5,
+          "nameService": "Vé tham quan"
+        }
+      ],
+      "description": {
+        "title": "Trải nghiệm thú vị trong tour",
+        "content": "Khám phá miền Tây 1 ngày từ TP.HCM với hành trình qua Mỹ Tho và Bến Tre. Tham quan chùa Vĩnh Tràng, một ngôi chùa cổ nổi tiếng tại Mỹ Tho. Thưởng ngoạn cảnh sông nước miền Tây bằng thuyền, khám phá cuộc sống trên sông và tham quan cồn Lân. Tại Bến Tre, trải nghiệm quy trình sản xuất kẹo dừa truyền thống và tham quan vườn cây trái sum suê. Thưởng thức ẩm thực đặc sắc miền Tây và tận hưởng không khí yên bình của vùng quê sông nước. Tour lý tưởng cho gia đình và du khách muốn tận hưởng và khám phá vẻ đẹp miền Tây trong thời gian ngắn. Cùng iVIVU khám phá ngay hôm nay!"
+      },
+      "tour_details": [
+        {
+          "id": 1,
+          "name": "Trải nghiệm Tiền Giang - Bến Tre",
+          "timeline": [
+            {
+              "time": "7h00 sáng",
+              "description": "Khởi hành từ 202 Lê Lai, Phường Bến Thành, Quận 1 đón khách đi Mỹ Tho - Bến Tre.\n\nDừng chân tại trạm dừng Mekong Tiền Giang, khách tự túc ăn sáng.",
+              "image": ""
+            },
+            {
+              "time": "Buổi sáng",
+              "description": "Đến bến tàu Chương Dương thành phố Mỹ Tho, đoàn xuống tàu du ngoạn trên sông Tiền, ngắm cảnh bốn cù lao Long - Lân - Quy - Phụng và chiêm ngưỡng cầu Rạch Miễu, cầu dây văng đầu tiên do kỹ sư Việt Nam thiết kế và xây dựng.",
+              "image": "https://cdn2.ivivu.com/2022/02/15/09/ivivu-cau-rach-mieu-2.gif"
+            },
+            {
+              "time": "",
+              "description": "- Tham quan cơ sở chế biến kẹo dừa, tìm hiểu cách chế biến và trải nghiệm làm kẹo dừa.",
+              "image": ""
+            },
+            {
+              "time": "",
+              "description": "- Sang cù lao Thới Sơn thưởng thức trà mật ong hoa nhãn, dạo quanh miệt vườn bằng xe ngựa.",
+              "image": "https://cdn2.ivivu.com/2019/06/11/14/ivivu-cu-lao-thoi-son.jpg"
+            },
+            {
+              "time": "",
+              "description": "Chèo xuồng ba lá len lỏi vào các con rạch nhỏ, thưởng thức trái cây tươi và nghe Đờn ca tài tử.",
+              "image": "https://cdn2.ivivu.com/2020/05/18/17/ivivu-cu-lao-thoi-son-tien-giang.gif"
+            },
+            {
+              "time": "",
+              "description": "- Di chuyển đến khu du lịch sinh thái Cồn Phụng, tham quan di tích đạo Dừa.",
+              "image": ""
+            },
+            {
+              "time": "Buổi trưa",
+              "description": "Dùng cơm trưa tại nhà hàng trên Cồn Phụng, tự do tham quan cảnh đẹp miền quê, trải nghiệm các trò chơi dân dã như đi cầu khỉ, cho cá bú, câu cá sấu (phí ngoài chương trình).",
+              "image": ""
+            },
+            {
+              "time": "Buổi chiều",
+              "description": "Chiều khởi hành về lại TP.HCM. Trên đường Tham quan chùa Vĩnh Tràng, ngôi chùa có 3 tượng Phật lớn nhất tỉnh Tiền Giang với kiến trúc pha lẫn Á - Âu.\nĐưa khách về lại điểm đón, kết thúc chương trình tour miền Tây 1 ngày Mỹ Tho - Bến Tre.",
+              "image": "https://cdn2.ivivu.com/2022/02/15/09/ivivu-chua-vinh-trang1.gif"
+            }
+          ]
+        }
+      ]
     }
   ],
   "users": [
@@ -4885,7 +4970,7 @@
       "tourId": "1",
       "userId": "4a21",
       "dateAdvisingRequest": "30/10/2024",
-      "isReplied": "0"
+      "isReplied": "1"
     }
   ],
   "advisingResponse": [
@@ -4918,10 +5003,17 @@
       "responserId": "2d34"
     },
     {
-      "id": "ffa0",
+      "id": "f79b",
       "advisingRequestId": "d5be",
-      "date": "2024-10-30",
-      "content": "Liên hệ với khách hàng không thành công ",
+      "date": "2024-11-04",
+      "content": "Liên hệ với khách hàng không thành công",
+      "responserId": "2d34"
+    },
+    {
+      "id": "a6d7",
+      "advisingRequestId": "d5be",
+      "date": "2024-11-05",
+      "content": "Finish",
       "responserId": "9f9f"
     }
   ]

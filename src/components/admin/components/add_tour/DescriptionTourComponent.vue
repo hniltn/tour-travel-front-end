@@ -2,18 +2,24 @@
     <form @submit.prevent="handleSubmit">
         <div class="form-group">
             <label for="description">Tiêu đề</label>
-            <input type="text" placeholder="Nhập tiêu đề" required />
+            <input type="text" placeholder="Nhập tiêu đề" v-model="title" required />
         </div>
         <div class="form-group">
             <label for="description">Nội dung</label>
-            <textarea placeholder="Nhập nội dung" required></textarea>
+            <textarea placeholder="Nhập nội dung" v-model="content" required></textarea>
         </div> 
-        <button type="button" align="right">Trước</button>
+        <button type="button" @click="goBack">Trước</button>
         <button type="submit" align="right">Tiếp theo</button>
     </form>
 </template>
 <script>
 export default {
+    data() {
+        return {
+            title: this.tourData?.description?.title || '',
+            content: this.tourData?.description?.content || ''
+        }
+    },
     methods: {
         handleSubmit() {
             this.$store.commit('tours/setDescription', {
@@ -21,6 +27,9 @@ export default {
                 content: this.content
             });
             this.$emit('next');
+        },
+        goBack() {
+            this.$emit('prev');
         }
     }
 }

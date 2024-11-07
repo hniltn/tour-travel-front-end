@@ -11,5 +11,9 @@ const tourService = {
         const tour = await axios.get(`${API_URL}/${id}`);
         return tour.data;
     },
+    async addTour(tourData) {
+        const response = await axios.post(API_URL, tourData);
+        return response.data;
+    }
 }
 export default tourService;

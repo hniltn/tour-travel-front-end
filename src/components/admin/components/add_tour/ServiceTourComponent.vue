@@ -4,8 +4,9 @@
             <label>Chọn dịch vụ mà tour sẽ cung cấp</label>
             <div class="services-container">
                 <div class="checkbox" v-for="(service, index) in services" :key="index">
-                    <input type="checkbox" :id="'service-' + index" :value="service.name" v-model="selectedServices">
-                    <label :for="'service-' + index">{{ service.name }}</label><br>
+                    <input type="checkbox" :id="'service-' + index" :value="service.nameService"
+                        v-model="selectedServices">
+                    <label :for="'service-' + index">{{ service.nameService }}</label><br>
                 </div>
                 <div class="checkbox1">
                     <input type="checkbox" id="" name="" value="">
@@ -39,21 +40,25 @@
     </form>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
     props: ['serviceTour'],
+    computed: {
+        ...mapState('tours', ['tourData'])
+    },
     data() {
         return {
             services: [
-                { id: 1, name: 'Bảo hiểm', selected: false },
-                { id: 2, name: 'Xe đưa đón', selected: false },
-                { id: 3, name: 'Hướng dẫn viên', selected: false },
-                { id: 4, name: 'Bữa ăn', selected: false },
-                { id: 5, name: 'Vé tham quan', selected: false },
-                { id: 6, name: 'Vé máy bay', selected: false },
-                { id: 7, name: 'Homestay', selected: false },
+                { id: 1, nameService: 'Bảo hiểm' },
+                { id: 2, nameService: 'Xe đưa đón' },
+                { id: 3, nameService: 'Hướng dẫn viên' },
+                { id: 4, nameService: 'Bữa ăn' },
+                { id: 5, nameService: 'Vé tham quan' },
+                { id: 6, nameService: 'Vé máy bay' },
+                { id: 7, nameService: 'Homestay' },
             ],
-            selectedServices: [],
-            newServices: []
+            selectedServices: this.tourData?.tour_services?.selected.map(service => service.nameService) || [],
+            newServices: this.tourData?.tour_services?.new.map(service => service.nameService) || []
         }
     },
     methods: {
@@ -68,10 +73,25 @@ export default {
             this.newServices.splice(index, 1);
         },
         handleSubmit() {
-            this.$store.commit('tours/setTourServices', {
-                selected: this.selectedServices,
-                new: this.newServices
+            const formattedServices = this.selectedServices.map(service => {
+                const foundService = this.services.find(s => s.nameService === service);
+                return {
+                    id: foundService ? foundService.id : null,
+                    nameService: foundService ? foundService.nameService : service
+                };
             });
+
+            const newFormattedServices = this.newServices.map((service, index) => ({
+                id: this.selectedServices.length + index + 1,
+                nameService: service 
+            }));
+
+            const tourServices = {
+                selected: formattedServices,
+                new: newFormattedServices
+            };
+            console.log('Tour Services:', tourServices);
+            this.$store.commit('tours/setTourServices', tourServices);
             this.$emit('next');
         }
     }
@@ -166,6 +186,7 @@ form {
     height: 100%;
     padding: 10px 10px;
 }
+
 .remove-service-button {
     display: flex;
     width: 20%;
@@ -175,6 +196,7 @@ form {
     padding: 5px 0px;
     margin-left: 5%;
 }
+
 .services-container .checkbox label,
 .services-container .checkbox1 label {
     font-weight: 400;

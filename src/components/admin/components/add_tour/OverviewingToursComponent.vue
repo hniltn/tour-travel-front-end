@@ -45,26 +45,27 @@
     </form>
 </template>
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapState } from 'vuex';
 export default {
     props: ['overviewingTour'],
-    data() {
-        return {
-            name: '',
-            image: '',
-            categoryId: '',
-            areaId: null,
-            price_adult: null,
-            quantity_date: '',
-            start_location: '',
-            end_location: ''
-        }
-    },
     computed: {
         ...mapGetters('categories', ['allCategories']),
         ...mapGetters('categories', ['areasByCategoryId']),
+        ...mapState('tours', ['tourData']),
         filteredAreas() {
             return this.areasByCategoryId(this.categoryId);
+        }
+    },
+    data() {
+        return {
+            name: this.tourData?.name || '',
+            image: this.tourData?.image || '',
+            categoryId: this.tourData?.categoryId || '',
+            areaId: this.tourData?.areaId || null,
+            price_adult: this.tourData?.price_adult || null,
+            quantity_date: this.tourData?.quantity_date || '',
+            start_location: this.tourData?.start_location || '',
+            end_location: this.tourData?.end_location || ''
         }
     },
     methods: {

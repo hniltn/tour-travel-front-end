@@ -2,16 +2,16 @@
   <div class="container-tour" v-if="tour && tour.id">
     <div class="title">{{ tour.name }}</div>
     <div class="rank">
-      <span v-for="n in Math.floor(Number(tour.star))" :key="n">
+      <span v-for="n in Math.floor(Number(tour.star)) || 0 " :key="n">
         <font-awesome-icon icon="fa-solid fa-star" class="icon"/>
       </span>
     </div>
     <div class="tour-detail">
       <div class="tour-left">
-        <tour-left :id="id"></tour-left>
+        <tour-left :id="id" v-if="tour && tour.vehicle && tour.tour_services"></tour-left>
       </div>
       <div class="tour-right">
-        <tour-right :id="id"></tour-right>
+        <tour-right :id="id" v-if="tour && tour.price_adult"></tour-right>
       </div>
     </div>
   </div>
@@ -39,8 +39,12 @@ export default {
   methods: {
     ...mapActions("auth", ["fetchUserInfo"]),
     async fetchTour() {
-      this.tour = await tourService.getTourById(this.id);
-      this.saveRecentTour(this.tour);
+      try {
+        this.tour = await tourService.getTourById(this.id);
+        this.saveRecentTour(this.tour);
+      } catch (error) {
+        console.error("Lỗi khi lấy thông tin tour:", error);
+      }
     },
     saveRecentTour(tour) {
       const userId = this.getUserId();

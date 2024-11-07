@@ -16,7 +16,7 @@
       <overviewing-tours-component @next="unlockTab('descriptions')" :activeTab="activeTab"></overviewing-tours-component>
     </div>
     <div v-if="activeTab === 'descriptions'" class="container-description" >
-      <description-tour-component @next="unlockTab('vehicles')"></description-tour-component>
+      <description-tour-component @next="unlockTab('vehicles')" @prev="setActiveTab('overview')"></description-tour-component>
     </div>
     <div v-if="activeTab === 'vehicles'" class="container-vehicle">
       <vehicle-component @next="unlockTab('services')"></vehicle-component>

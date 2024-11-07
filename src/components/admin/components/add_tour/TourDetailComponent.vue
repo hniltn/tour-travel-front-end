@@ -15,7 +15,7 @@
                 <div v-for="(timeline, index) in day.timeline" :key="index" class="timeline-entry">
                     <div class="form-group">
                         <label for="time">Thời gian</label>
-                        <input type="text" v-model="timeline.time" placeholder="Nhập thời gian" required />
+                        <input type="text" v-model="timeline.time" placeholder="Nhập thời gian" />
                     </div>
                     <div class="form-group">
                         <label for="description">Mô tả</label>
@@ -32,20 +32,24 @@
             </div>
         </div>
         <button type="button" style="background-color: #003c71;" @click="addNewDay">Thêm Ngày</button>
-        <router-link to="/confirmation">
+        <!-- <router-link to="/confirmation"> -->
             <button type="submit">Xác nhận</button>
-        </router-link>
+        <!-- </router-link> -->
     </form>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
     props: ['tourDetail'],
+    computed: {
+        ...mapState('tours', ['tourData'])
+    },
     data() {
         return {
-            tourDays: [
+            tourDays: this.tourData?.tour_details?.length ? this.tourData.tour_details : [
                 {
+                    id: 1,
                     name: '',
-                    visible: true,
                     timeline: [
                         { time: '', description: '', image: '' }
                     ]
@@ -56,8 +60,8 @@ export default {
     methods: {
         addNewDay() {
             this.tourDays.push({
+                id: this.tourDays.length + 1,
                 name: '',
-                visible: true,
                 timeline: [
                     { time: '', description: '', image: '' }
                 ]
@@ -78,6 +82,7 @@ export default {
         handleSubmit() {
             this.$store.commit('tours/setTourDetails', this.tourDays);
             this.$emit('next');
+            this.$router.push('/confirmation');
         }
     }
 }
