@@ -98,6 +98,7 @@
       "end_location": "Sapa",
       "star": "4",
       "start_date": "20/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -265,6 +266,7 @@
       "end_location": "Thái Lan",
       "star": "4",
       "start_date": "20/7/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -462,6 +464,7 @@
       "end_location": "Singapore",
       "star": "4",
       "start_date": "25/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -633,6 +636,7 @@
       "end_location": "Ma Rốc",
       "star": "4",
       "start_date": "20/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -860,6 +864,7 @@
       "end_location": "Đà Nẵng",
       "star": "4",
       "start_date": "20/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -1073,6 +1078,7 @@
       "end_location": "Phú Quốc",
       "star": "4",
       "start_date": "22/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -1239,6 +1245,7 @@
       "end_location": "Huế",
       "star": "4",
       "start_date": "21/06/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -1384,6 +1391,7 @@
       "end_location": "Phan Thiết",
       "star": "4",
       "start_date": "24/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -1500,6 +1508,7 @@
       "end_location": "Kon Tum - Gia Lai - Buôn Mê",
       "star": "5",
       "start_date": "29/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -1660,6 +1669,7 @@
       "end_location": "Quy Nhơn - Phú Yên",
       "star": "5",
       "start_date": "06/7/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -1814,6 +1824,7 @@
       "end_location": "Quy Nhơn - Phú Yên",
       "star": "4",
       "start_date": "22/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -2020,6 +2031,7 @@
       "end_location": "Bình Ba",
       "star": "4.5",
       "start_date": "23/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -2144,6 +2156,7 @@
       "end_location": "Nha Trang",
       "star": "4",
       "start_date": "19/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -2218,6 +2231,7 @@
       "end_location": "Điệp Sơn",
       "star": "4",
       "start_date": "24/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -2297,6 +2311,7 @@
       "end_location": "Mộc Châu",
       "star": "4",
       "start_date": "29/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -2415,6 +2430,7 @@
       "end_location": "Hà Nội",
       "star": "4",
       "start_date": "02/07/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -2669,6 +2685,7 @@
       "end_location": "Sapa",
       "star": "4",
       "start_date": "09/07/2023",
+      "status": 0,
       "vehicle": [
         {
           "id": 1,
@@ -2773,6 +2790,7 @@
       "end_location": "Hà Giang",
       "star": "4",
       "start_date": "30/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -2990,6 +3008,7 @@
       "end_location": "Cao Bằng",
       "star": "4",
       "start_date": "08/08/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -3192,6 +3211,7 @@
       "end_location": "Hạ Long",
       "star": "4",
       "start_date": "28/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -3456,6 +3476,7 @@
       "end_location": "Hạ Long",
       "star": "4",
       "start_date": "20/6/2023",
+      "status": 0,
       "vehicle": [
         {
           "id": 1,
@@ -3614,6 +3635,7 @@
       "end_location": "Thái Lan",
       "star": "4",
       "start_date": "20/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -3751,6 +3773,7 @@
       "end_location": "Singapore",
       "star": "5",
       "start_date": "29/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -3889,6 +3912,7 @@
       "end_location": "Campuchia",
       "star": "5",
       "start_date": "20/7/2023",
+      "status": 0,
       "vehicle": [
         {
           "id": 1,
@@ -4017,6 +4041,7 @@
       "end_location": "Thái Lan",
       "star": "5",
       "start_date": "20/7/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -4161,6 +4186,7 @@
       "end_location": "Singapore - Malaysia",
       "star": "5",
       "start_date": "1/7/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -4255,6 +4281,7 @@
       "end_location": "Thái Lan",
       "star": "5",
       "start_date": "29/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -4385,6 +4412,7 @@
       "end_location": "Indonesia",
       "star": "4",
       "start_date": "27/6/2023",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
@@ -4530,6 +4558,7 @@
       "end_location": "Thái Lan",
       "star": "4",
       "start_date": "22/6/2023",
+      "status": 0,
       "vehicle": [
         {
           "id": 1,
@@ -4670,6 +4699,7 @@
       "end_location": "Bến Tre",
       "star": "Chưa có đánh giá",
       "start_date": "11/7/2024",
+      "status": 1,
       "vehicle": [
         {
           "id": 1,
